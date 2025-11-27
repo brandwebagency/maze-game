@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "ElkjopHeadline";
+  src: url("/static/fonts/elkjop/ElkjopHeadline-Regular.woff2") format("woff2"),
+    /* Modern Browsers */ url("/static/fonts/elkjop/ElkjopHeadline-Regular.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "ElkjopBody";
+  src: url("/static/fonts/elkjop/ElkjopBodytext-Regular.woff2") format("woff2"),
+    /* Modern Browsers */ url("/static/fonts/elkjop/ElkjopBodytext-Regular.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  font-style: 400;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "ElkjopBody";
+  src: url("/static/fonts/elkjop/ElkjopBodytext-DemiBold.woff2") format("woff2"),
+    /* Modern Browsers */
+      url("/static/fonts/elkjop/ElkjopBodytext-DemiBold.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "ElkjopBody";
+  src: url("/static/fonts/elkjop/ElkjopBodytext-Black.woff2") format("woff2"),
+    /* Modern Browsers */ url("/static/fonts/elkjop/ElkjopBodytext-Black.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+}

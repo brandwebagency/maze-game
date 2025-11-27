@@ -1,0 +1,23 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--background-color);
+  transition: 300ms ease-in-out all;
+
+  .rt-Spinner {
+    width: 4rem;
+    height: 4rem;
+    color: var(--accent-9);
+  }
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    color: var(--accent-9);
+
+    &--error {
+      color: var(--red-9);
+    }
+  }
+}

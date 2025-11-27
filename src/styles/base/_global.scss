@@ -1,0 +1,55 @@
+@use "../utils/functions" as breakpoint;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 100vw;
+}
+
+html,
+body {
+  background: var(--background-color);
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // Internet Explorer and Edge
+
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Full width elements aligned with side navigation
+.align-full {
+  margin-left: calc((-100vw) / 2 + 100% / 2);
+  margin-right: calc(-100vw / 2 + 100% / 2);
+  max-width: calc(100vw);
+
+  @media #{breakpoint.$sm} {
+    margin-left: calc((-100vw + 300px) / 2 + 100% / 2);
+    margin-right: calc(-100vw / 2 + 100% / 2);
+    max-width: calc(100vw - 300px);
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "spike-ba886"
+  },
+  "targets": {
+    "spike-ba886": {
+      "hosting": {
+        "mazegameiplay": [
+          "mazegameiplay"
+        ]
+      }
+    }
+  }
+}

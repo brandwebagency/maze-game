@@ -1,0 +1,16 @@
+// Utils (SCSS Variables has to be defined before the rest)
+@use "utils/variables";
+@use "utils/functions";
+@use "utils/animations";
+
+// Base
+@use "base/global";
+@use "base/reset";
+
+// Layout
+@use "layout/main";
+
+// Themes
+@use "themes/test.scss";
+@use "themes/elgiganten.scss";
+@use "themes/keychron.scss";
