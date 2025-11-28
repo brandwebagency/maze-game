@@ -1,43 +1,34 @@
-import { Box, Button, Flex, Heading, Text } from "@radix-ui/themes";
-import React from "react";
+import { Button, Flex, Heading, Text } from "@radix-ui/themes";
+import React, { useEffect } from "react";
 
 const AimTrainerStart: React.FC<{ gameState: any; startGame: any }> = ({
   gameState,
   startGame,
 }) => {
-  return (
-    <>
-      {gameState === "start" && (
-        <Flex
-          direction="column"
-          align="center"
-          justify={"center"}
-          gap="3"
-          height={"100vh"}
-        >
-          <Heading as="h1" size="8" weight="bold">
-            Aim trainer target practice
-          </Heading>
-
-          <Box>
-            <Text as="p" align={"center"} mb={"0"} size={"5"}>
-              You have 15 seconds,
-            </Text>
-            <Text as="p" align={"center"} size={"5"}>
-              How many targets can you hit?
-            </Text>
-          </Box>
-
-          <Button color="orange" size={"4"} onClick={startGame}>
-            START TEST
+  if (gameState === "start") {
+    return (
+      <Flex minHeight="100vh" justify="center" align="center" flexGrow="1">
+        <Flex direction="column" align="center" gap="8" justify="center">
+          <img
+            src="/static/images/tenants/inzone/inzone.webp"
+            alt="Inzone Logo"
+            width={250}
+          />
+          <Flex direction="column" align="center" gap="1">
+            <Heading as="h1" m="0">
+              Aim Trainer
+            </Heading>
+            <Text>Shoot as many targets as you can in 15 seconds</Text>
+          </Flex>
+          <Button size="4" onClick={startGame}>
+            Press to Start
           </Button>
-          <Text size={"5"}>
-            Time starts as soon as you press the start button
-          </Text>
         </Flex>
-      )}
-    </>
-  );
+      </Flex>
+    );
+  }
+
+  return null;
 };
 
 export default AimTrainerStart;

@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Text } from "@radix-ui/themes";
+import { Box, Card, Flex, Grid, Text } from "@radix-ui/themes";
 import Target from "../Target";
 import { AimTrainerGameProps } from "./AimTrainerGame.types";
 
@@ -12,29 +12,59 @@ const AimTrainerGame: React.FC<AimTrainerGameProps> = ({
 }) => {
   return (
     <Flex
-      direction={"column"}
-      height={"100vh"}
-      align={"center"}
-      justify={"center"}
-      width={"100%"}
+      direction="column"
+      height="100vh"
+      align="center"
+      justify="center"
+      width="100%"
     >
-      <Box width={"100%"}>
-        <Container>
-          <Flex justify="between" mb="3" align="center">
-            <Text size="4">Time: {(timeLeft / 1000).toFixed(2)}s</Text>
-            <Text size="4">Score: {Math.round(score)}</Text>
-            <Text size="4">Hits: {targetsHit}</Text>
-          </Flex>
-        </Container>
-
+      <Flex height="5vh" py="4" px="4" gap="5" width="100%">
+        <Grid columns="3" gap="3" width="100%">
+          <Box gridColumn="1 / 2">
+            <Card size="4">
+              <Flex direction="column" gap="0">
+                <Text size="2" color="gray">
+                  Time
+                </Text>
+                <Text size="4" weight="bold">
+                  {(timeLeft / 1000).toFixed(2)}s
+                </Text>
+              </Flex>
+            </Card>
+          </Box>
+          <Box gridColumn="2 / 3">
+            <Card size="4">
+              <Flex direction="column" gap="0">
+                <Text size="2" color="gray">
+                  Score
+                </Text>
+                <Text size="4" weight="bold">
+                  {Math.round(score)}
+                </Text>
+              </Flex>
+            </Card>
+          </Box>
+          <Box gridColumn="3 / -1">
+            <Card size="4">
+              <Flex direction="column" gap="0">
+                <Text size="2" color="gray">
+                  Hits
+                </Text>
+                <Text size="4" weight="bold">
+                  {targetsHit}
+                </Text>
+              </Flex>
+            </Card>
+          </Box>
+        </Grid>
+      </Flex>
+      <Box height="95vh" width="100%">
         <div
           ref={gameAreaRef as any}
           style={{
             position: "relative",
             width: "100%",
-            height: "56vh",
-            background: "white",
-            borderRadius: 8,
+            height: "100vh",
             overflow: "hidden",
           }}
           onClick={() => {

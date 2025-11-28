@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Container } from "@radix-ui/themes";
 import { useAimTrainerTimeBased } from "../hooks/useAimTrainerTimeBased";
 import AimTrainerResults from "../components/AimTrainerResults/AimTrainerResults";
 import AimTrainerStart from "../components/AimTrainerStart/AimTrainerStart";
 import AimTrainerGame from "../components/AimTrainerGame/AimTrainerGame";
+import { useTheme } from "@/hooks/useTheme";
+import { inzoneTheme } from "@/constants/theme/inzoneTheme";
 
 const AimTrainer: React.FC = () => {
+  const { update } = useTheme();
+
+  useEffect(() => {
+    update({
+      ...inzoneTheme,
+    });
+  }, []);
+
   const {
     handleTargetClick,
     startGame,
@@ -21,9 +31,7 @@ const AimTrainer: React.FC = () => {
 
   return (
     <Box style={{ minHeight: "100vh" }}>
-      <Container>
-        <AimTrainerStart gameState={gameState} startGame={startGame} />
-      </Container>
+      <AimTrainerStart gameState={gameState} startGame={startGame} />
 
       {gameState === "playing" && (
         <AimTrainerGame
@@ -36,16 +44,14 @@ const AimTrainer: React.FC = () => {
         />
       )}
 
-      <Container>
-        {gameState === "results" && (
-          <AimTrainerResults
-            startGame={startGame}
-            setGameState={setGameState}
-            scoreDetails={scoreDetails}
-            targetsHit={targetsHit}
-          />
-        )}
-      </Container>
+      {gameState === "results" && (
+        <AimTrainerResults
+          startGame={startGame}
+          setGameState={setGameState}
+          scoreDetails={scoreDetails}
+          targetsHit={targetsHit}
+        />
+      )}
     </Box>
   );
 };
